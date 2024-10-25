@@ -15,3 +15,14 @@ function fibs(num) {
 
 fibs(3);
 
+function fibsRec(num, fibsArray = [0, 1]) {
+    if (num <= fibsArray.length) {
+     return fibsArray.slice(0, num);
+    }
+ 
+    const fibNum = fibsArray[fibsArray.length - 2] + fibsArray[fibsArray.length - 1];
+    return fibsRec(num, [...fibsArray, fibNum]);
+ }
+ 
+ console.log(fibsRec(8));
+
